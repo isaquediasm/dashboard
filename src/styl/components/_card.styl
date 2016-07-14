@@ -1,0 +1,72 @@
+.card
+	box-shadow()
+	width calc(" 28.4% - "$spacer*4)
+	padding $spacer*3 $spacer*4
+	background-color #fff
+	border-radius 5px
+	float left
+	margin-top 2%
+	margin-right 2%
+	height $spacer*33
+	overflow auto
+	
+	&:nth-child(3n+2)
+		margin-right 0
+		
+	.title 
+		text-transform uppercase
+		font-weight 700
+		color $color_grey
+		border-bottom 2px solid $color_light
+		padding-bottom $spacer
+		
+	.text 
+		text-7()
+		font-weight 300
+		color $color_grey_darker
+		margin-top $spacer*2
+		letter-spacing .5px
+	
+	.delete
+		float right
+		color $color_red
+		font-weight 700
+		cursor pointer 
+		
+	&-add
+		@extend .card
+		margin-bottom $spacer*2
+		background-color $color_blue
+		color #fff
+		height $spacer*33
+		cursor pointer
+		overflow hidden
+		
+		.title 
+			color #fff
+			border none
+			
+		.plus
+			font-size 200px
+			font-weight 200
+		
+		.card-content 
+			text-align center 
+		
+		.add-content
+			display none
+			
+			&.show
+				display block 
+				
+		&:hover 
+			.plus 
+				transition(.6s)
+				transform rotate(360deg)
+			
+.hide 
+	display none !important
+
+.card, .card-add
+	+media-query( $breakpoint_mobile )
+		width 80%

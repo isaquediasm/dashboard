@@ -1,0 +1,41 @@
+transition(time)
+	transition all time cubic-bezier(0, 1, 0.5, 1)
+	
+hover-scale() 
+	transition(.4s)
+	&:hover 
+		transform scale(1.05)
+		
+uppercase() 
+	font-size $spacer+4
+	font-weight 700
+	text-transform uppercase
+	letter-spacing .9px
+
+border-menu()
+	border-bottom ($spacer/2) solid darken($color_dark, 10%)		
+	border-left ($spacer/2) solid darken($color_dark, 10%)	
+	
+box-shadow()
+	box-shadow 0 3px 6px rgba(0,0,0,0.16)
+	
+text-light() 
+	font-weight 300
+	
+text-1() 
+	font-size $spacer*8
+	
+text-2() 
+	font-size $spacer*6
+	
+text-3()
+	font-size $spacer*4
+	
+text-5() 
+	font-size $spacer*3
+	
+text-6()
+	font-size $spacer*2.3
+	
+text-7()
+	font-size $spacer*1.7

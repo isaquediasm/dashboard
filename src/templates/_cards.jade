@@ -1,0 +1,16 @@
+.card-add
+	.card-content
+		.title add new card
+		.plus +
+
+	.add-content 
+		form(id="addCard").form 
+			.group
+				label title
+								input(id="title" required) 
+			.group
+				label text
+				textarea(id="text" required)
+			button(type="submit").button create card
+
+.cards-container

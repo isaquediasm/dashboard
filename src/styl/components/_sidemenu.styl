@@ -1,0 +1,129 @@
+.side-menu
+	position fixed
+	width $spacer*37
+	height 100%
+	z-index 1000
+	background-color $sidemenu_color
+	transition(.5s)
+
+	.profile
+		float left
+		background-color $sidemenu_profile_color
+		color #fff
+		padding $spacer*3 $spacer*2 
+		text-transform uppercase
+		border-left $spacer solid darken($sidemenu_profile_color, 25%)
+		transition(.5s)
+		hover-scale()
+		
+		.title, .desc, .pic
+			float left
+			
+		.title 
+			text-6()
+			letter-spacing $spacer*.1
+			margin-top $spacer
+			
+		.desc
+			text-7()
+			text-light()
+			margin-top -10px
+			
+		.pic
+			width $spacer*7
+			border-radius 50%
+			margin-right $spacer*2
+			
+			img
+				width 100%
+				height auto
+				
+	.list 
+		text-7()
+		padding 0
+		list-style none
+		text-transform uppercase
+		font-weight 700
+		
+		li
+			transition(.2s)
+			width calc(" 50% - "$spacer/2)
+			height $spacer*15
+			float left
+			color #eee
+			border-bottom ($spacer/2) solid $color_darker		
+			border-left ($spacer/2) solid $color_darker
+			text-align center
+			cursor pointer
+			
+			&:before
+				display block
+				content ''
+				background-size cover
+				width 30px
+				height 30px
+				margin $spacer*4 auto
+				
+			&:nth-child(odd)
+				border-left 0
+		
+			span
+				position relative 
+				top $spacer - ($spacer*3)
+				
+			&:hover 
+				background-color $color_darker
+			
+			&.dashboard:before
+				background-image url('../img/dash.svg')
+				
+			&.sales:before
+				background-image url('../img/percent.svg')
+				
+			&.users:before
+				background-image url('../img/avatar.svg')
+				
+			&.partners:before
+				background-image url('../img/handshake.svg')
+			
+			&.stats:before
+				background-image url('../img/stats.svg')
+				
+			&.settings:before
+				background-image url('../img/settings.svg')
+				
+/*************
+* 
+*  MOBILE 
+*
+**************/
+.side-menu
+	+media-query( $breakpoint_mobile )
+		width 70%
+		margin-left -70%
+		
+		.profile
+			position absolute
+			width calc(" 100% - "$spacer*5)
+			top 0
+			
+			.title, .desc
+				width calc(" 80% - "$spacer*7)		
+		
+		.list 
+			margin-top $spacer*8
+			
+		.btn-open
+			background-image url('../img/bars.svg')
+			background-size cover
+			width 35px
+			height 35px
+			margin-left calc("100% + 20px")		
+			margin-top 15px
+			transition(.5s)
+			
+			&:active
+				transform scale(1.2)
+			
+		&.open 
+			margin-left 0

@@ -1,0 +1,22 @@
+.container 
+	position fixed
+	right 0
+	width calc(" 100% - "$spacer*37)
+	height 100%
+	background-color $color_light
+	overflow auto
+	
+	.wrapper 
+		width 90%
+		margin 0 auto
+	
+/*************
+* 
+*  MOBILE 
+*
+**************/
+.container
+	+media-query( $breakpoint_mobile )
+		width 100%
+		margin-top 65px
+		padding-top 20px
